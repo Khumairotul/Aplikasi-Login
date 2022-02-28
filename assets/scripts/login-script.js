@@ -37,14 +37,31 @@ const expectedEmail = 'admin@dicoding.com';
 */
 const expectedPassword = 'superpassword';
 
+// Comment : menambahkan aksi pada button
 loginFormElement.addEventListener('submit', function(event) {
   event.preventDefault();
 
+  /**
+  * Membuat variable email untuk menyimpan nilai email saat button ditekan
+  * @constan {string}
+  */
   const email = inputEmailElement.value;
+  
+  /**
+  * Membuat variable password untuk menyimpan nilai password saat button ditekan
+  * @constan {string}
+  */
   const password = inputPasswordElement.value;
+  
+  /* Comment : memastikan bahwa nilai email dan password sesuai dengan nilai yang disimpan */
   if (email == expectedEmail && password == expectedPassword) {
+    
+    /* Comment : Jika sesuai maka program akan ke halaman home */
     goToHome();
+ 
   } else {
+    
+    /* Comment : namun jika tudak sesuai maka akan menampilkan informasi bahwa input salah */
     showPopUp();
   }
 });
